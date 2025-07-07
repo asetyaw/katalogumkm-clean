@@ -24,4 +24,10 @@ Aplikasi Android sederhana untuk katalog produk UMKM berbasis Firebase.
 
 ---
 
+## 🔀 Switch to Design Branch
+Setelah clone repository ini, jalankan perintah berikut agar masuk ke branch design:
+
+```bash
+git checkout design-support
+
 > Untuk kontribusi desain, silakan gunakan branch `design-support`.
