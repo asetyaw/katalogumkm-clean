@@ -1,102 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context=".ui.LoginActivity">
+    android:background="@drawable/login">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="217dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.546"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.513"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="217dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.546"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.633"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"/>
+
+            <TextView
+                android:id="@+id/buatakun"
+                android:layout_width="129dp"
+                android:layout_height="29dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.943"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.699"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="121dp"
+                android:layout_height="95dp"
+                android:backgroundTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.974"
+                tools:ignore="TouchTargetSizeCheck"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="24dp">
+        android:backgroundTint="#00000000"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.794"
+        tools:ignore="TouchTargetSizeCheck"/>
 
-        <!-- Logo -->
-        <ImageView
-            android:id="@+id/logoImage"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/ic_launcher_foreground"
-            android:contentDescription="Logo"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Judul Aplikasi -->
-        <TextView
-            android:id="@+id/appTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Katalog UMKM"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginBottom="32dp" />
-
-        <!-- Input Email -->
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Input Password -->
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Tombol Login Manual -->
-        <Button
-            android:id="@+id/btnLoginManual"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Tombol Daftar -->
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Daftar Sekarang"
-            android:backgroundTint="@android:color/darker_gray"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Divider -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="atau"
-            android:textColor="#888888"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Tombol Login Google -->
-        <Button
-            android:id="@+id/googleSignInButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Masuk dengan Google"
-            android:backgroundTint="@color/purple_500"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="24dp" />
-
-        <!-- Progress Bar -->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
-
-    </LinearLayout>
-</ScrollView>
