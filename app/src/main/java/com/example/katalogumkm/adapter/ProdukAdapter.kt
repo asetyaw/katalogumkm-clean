@@ -2,6 +2,7 @@ package com.example.katalogumkm.adapter
 
 import android.app.AlertDialog
 import android.content.Intent
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.example.katalogumkm.databinding.ItemProdukBinding
 import com.example.katalogumkm.model.Produk
 import com.example.katalogumkm.ui.DetailProdukActivity
 import com.example.katalogumkm.ui.EditProdukActivity
+import com.example.katalogumkm.utils.Utils.formatRupiah
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ProdukAdapter(
@@ -32,9 +34,30 @@ class ProdukAdapter(
         val context = holder.binding.root.context
         val firestore = FirebaseFirestore.getInstance()
 
+        var isExpanded = false
+
+        holder.binding.tvDeskripsiProduk.maxLines = 3
+        holder.binding.tvDeskripsiProduk.ellipsize = TextUtils.TruncateAt.END
+
+        holder.binding.btnToggleDeskripsi.setOnClickListener {
+            isExpanded = !isExpanded
+
+            if (isExpanded) {
+                holder.binding.tvDeskripsiProduk.maxLines = Integer.MAX_VALUE
+                holder.binding.tvDeskripsiProduk.ellipsize = null
+                holder.binding.btnToggleDeskripsi.text = "Tampilkan Lebih Sedikit"
+            } else {
+                holder.binding.tvDeskripsiProduk.maxLines = 3
+                holder.binding.tvDeskripsiProduk.ellipsize = TextUtils.TruncateAt.END
+                holder.binding.btnToggleDeskripsi.text = "Lihat Selengkapnya"
+            }
+        }
+
+
         with(holder.binding) {
             tvNamaProduk.text = produk.nama
-            tvHargaProduk.text = "Rp ${produk.harga}"
+            tvHargaProduk.text = formatRupiah(produk.harga)
+            tvDeskripsiProduk.text = produk.deskripsi
 
             Glide.with(imgProduk.context)
                 .load(produk.gambarUrl)
@@ -51,6 +74,21 @@ class ProdukAdapter(
                 intent.putExtra(DetailProdukActivity.EXTRA_PRODUK, produk)
                 context.startActivity(intent)
             }
+
+            // Tombol Hubungi — semua pengguna bisa akses
+            btnContact.visibility = View.VISIBLE
+            btnContact.setOnClickListener {
+                val nomor = produk.kontak.trim()
+                if (nomor.isNotEmpty()) {
+                    val uri = "https://wa.me/$nomor"
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.data = android.net.Uri.parse(uri)
+                    context.startActivity(intent)
+                } else {
+                    Toast.makeText(context, "Kontak tidak tersedia", Toast.LENGTH_SHORT).show()
+                }
+            }
+
 
             // Admin bisa hapus produk
             if (role == "admin") {

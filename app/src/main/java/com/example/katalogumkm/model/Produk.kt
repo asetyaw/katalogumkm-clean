@@ -9,5 +9,6 @@ data class Produk(
     var deskripsi: String = "",
     var gambarUrl: String = "",
     var kategori: String = "",
+    val kontak: String = "",
     var timestamp: Long = System.currentTimeMillis()
 ) : Serializable

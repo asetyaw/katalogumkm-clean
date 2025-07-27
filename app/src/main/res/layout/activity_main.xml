@@ -16,8 +16,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:backgroundTint="@color/purple_500"
-            android:title="Katalog UMKM"
+            android:backgroundTint="@color/black"
+            android:title="Katalog Danus UTB"
             android:titleTextColor="@color/white"
             app:titleCentered="true" />
 

@@ -68,6 +68,14 @@
             android:layout_marginBottom="8dp"/>
 
         <EditText
+            android:id="@+id/etKontak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nomor WhatsApp (cth: 6281234567890)"
+            android:inputType="phone"
+            android:layout_marginTop="8dp" />
+
+        <EditText
             android:id="@+id/etUrlGambar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

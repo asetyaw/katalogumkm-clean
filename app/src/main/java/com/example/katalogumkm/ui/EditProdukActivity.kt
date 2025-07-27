@@ -43,6 +43,7 @@ class EditProdukActivity : AppCompatActivity() {
         binding.etHarga.setText(produk.harga.toString())
         binding.etDeskripsi.setText(produk.deskripsi)
         binding.etUrlGambar.setText(produk.gambarUrl)
+        binding.etKontak.setText(produk.kontak)
         Glide.with(this).load(produk.gambarUrl).into(binding.imgPreview)
 
         // Pilih kategori yang sesuai
@@ -68,6 +69,7 @@ class EditProdukActivity : AppCompatActivity() {
         val deskripsi = binding.etDeskripsi.text.toString().trim()
         val gambarUrl = binding.etUrlGambar.text.toString().trim()
         val kategori = binding.spinnerKategori.selectedItem.toString()
+        val kontak = binding.etKontak.text.toString().trim()
 
         if (nama.isEmpty() || harga == null || deskripsi.isEmpty() || gambarUrl.isEmpty()) {
             Toast.makeText(this, "Lengkapi semua field!", Toast.LENGTH_SHORT).show()
@@ -80,6 +82,7 @@ class EditProdukActivity : AppCompatActivity() {
             "deskripsi" to deskripsi,
             "gambarUrl" to gambarUrl,
             "kategori" to kategori,
+            "kontak" to kontak,
             "timestamp" to System.currentTimeMillis()
         )
 

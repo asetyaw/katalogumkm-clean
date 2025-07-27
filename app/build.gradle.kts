@@ -78,6 +78,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
 
+
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
