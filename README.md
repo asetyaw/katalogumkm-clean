@@ -1,6 +1,6 @@
 # 📱 Katalog UMKM
 
-Aplikasi Android sederhana untuk katalog produk UMKM berbasis Firebase.
+Aplikasi Android sederhana untuk katalog produk Dana Usaha di UTB berbasis Firebase.
 
 ## 🧩 Teknologi:
 - Kotlin (Android Studio)
