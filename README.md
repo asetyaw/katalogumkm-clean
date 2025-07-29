@@ -1,4 +1,4 @@
-# 📱 Katalog UMKM
+# 📱 Katalog Danus UTB
 
 Aplikasi Android sederhana untuk katalog produk Dana Usaha di UTB berbasis Firebase.
 
